@@ -38,5 +38,6 @@ PRODUCT_PACKAGES += \
     cm_charger_res_images
 
 # SELinux file contexts
-PRODUCT_COPY_FILES +=
-    $(LOCAL_PATH)/ramdisk/file_contexts:root/file_contexts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/file_contexts:root/file_contexts \
+    $(LOCAL_PATH)/kernel:kernel

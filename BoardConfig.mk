@@ -16,16 +16,12 @@
 
 LOCAL_PATH := device/samsung/a5y17lte
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
 # Firmware
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
-TARGET_SLSI_VARIANT := cm
 TARGET_SOC := exynos7880
 TARGET_BOOTLOADER_BOARD_NAME := universal7880
 
@@ -49,19 +45,10 @@ TARGET_USES_64_BIT_BINDER := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt $(LOCAL_PATH)/dtb.img
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-#BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_VENDOR := samsung
-TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-
-# Kernel
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_USES_UNCOMPRESSED_KERNEL := true
-
-TARGET_KERNEL_SOURCE := kernel/samsung/a5y17lte
-TARGET_KERNEL_CONFIG := lineage-a5y17lte_defconfig
+BOARD_KERNEL_CMDLINE :=  androidboot.selinux=permissive
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
