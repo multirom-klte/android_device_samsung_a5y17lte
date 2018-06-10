@@ -1,0 +1,14 @@
+/boot			emmc	/dev/block/platform/13540000.dwmmc0/by-name/BOOT
+/recovery		emmc	/dev/block/platform/13540000.dwmmc0/by-name/RECOVERY
+/system			ext4	/dev/block/platform/13540000.dwmmc0/by-name/SYSTEM
+/data			ext4	/dev/block/platform/13540000.dwmmc0/by-name/USERDATA
+/cache			ext4	/dev/block/platform/13540000.dwmmc0/by-name/CACHE
+/modem			emmc	/dev/block/platform/13540000.dwmmc0/by-name/RADIO		flags=backup=1;display="Baseband"
+/modem_debug	emmc	/dev/block/platform/13540000.dwmmc0/by-name/CP_DEBUG	flags=display="Baseband (Debug)";subpartitionof=/modem
+/efs			ext4	/dev/block/platform/13540000.dwmmc0/by-name/EFS
+/efs1         		emmc   /dev/block/mmcblk0p12 flags=backup=1;display=EFS
+/efs2         		emmc   /dev/block/mmcblk0p13 flags=backup=1;subpartitionof=/efs1
+/efs3         		emmc   /dev/block/mmcblk0p14 flags=backup=1;subpartitionof=/efs1
+/preload        	ext4	/dev/block/platform/13540000.dwmmc0/by-name/HIDDEN
+/external_sd     	vfat	/dev/block/mmcblk1p1    /dev/block/mmcblk1   flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg         	vfat	/dev/block/sda1         /dev/block/sda       flags=display="USB-OTG";storage;wipeingui;removable

@@ -89,3 +89,6 @@ TW_INCLUDE_CRYPTO := true
 # Samsung's encryption is currently unsupported
 #TW_INCLUDE_CRYPTO_SAMSUNG := true
 #TARGET_HW_DISK_ENCRYPTION := true
+
+# multirom
+-include $(LOCAL_PATH)/multirom/multirom.mk
